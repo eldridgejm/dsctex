@@ -1,4 +1,4 @@
-# Welcome to DSCTeX
+# Welcome to the DSCTeX Documentation
 
 This package contains LaTeX `.sty` and `.cls` files used in DSC courses at UCSD.
 
@@ -14,6 +14,6 @@ that directory to the `$TEXINPUTS` environment variable.
 
 There are three files in this distribution:
 
-- [`dscslides.sty`](dscslides.md): a style file wrapper Beamer for the creation of lecture slides
+- [`dscslides.sty`](dscslides.md): a style file for the creation of lecture slides
 - [`dscproblemset.cls`](dscproblemset.cls): a class for creating sets of problems (and solutions)
 - [`dscexam.cls`](dscexam.cls): a class for creating exams
