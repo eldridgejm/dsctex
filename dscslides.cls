@@ -10,9 +10,6 @@
     \handoutfalse
 \fi
 
-% this will consume the outputdir option, if passed
-\RequirePackage{minted}
-
 \LoadClass[aspectratio=169, 14pt]{beamer}
 \setbeamersize{text margin left=.75in}
 \setbeamersize{text margin right=.75in}
@@ -23,8 +20,6 @@
 \RequirePackage{enumitem}
 \RequirePackage{hyperref}
 \RequirePackage{tcolorbox}
-\RequirePackage[normalem]{ulem}
-\RequirePackage{soul}
 
 % fonts
 \RequirePackage[sfdefault,lining,semibold,book]{FiraSans}
@@ -39,11 +34,6 @@
 
 
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
-
-% commands
-% ========
-\newcommand{\python}[1]{\mintinline{python}{#1}}
-
 
 % theorems
 % ========
@@ -91,7 +81,6 @@
 \newcommand{\bad}[1]{\textbf{\textcolor{pastelred}{#1}}}
 \newcommand{\good}[1]{\textbf{\textcolor{darkgreen}{#1}}}
 \newcommand{\highlight}[1]{\textbf{#1}}
-\newcommand{\faded}[1]{{\textcolor{faded}{#1}}}
 
 % color definitions
 % =================
@@ -199,24 +188,6 @@
                   top=2pt,
                   title={\bfseries Definition}
                   ]%%
-}{
-    \end{tcolorbox}
-    \end{center}
-}
-
-
-\newenvironment{claim}{
-    \begin{center}
-    \begin{tcolorbox}[width=4in,
-                  boxsep=.5em,
-                  colback=white,
-                  colframe=black!70,
-                  left=2pt,
-                  right=0pt,
-                  top=2pt,
-                  title={\bfseries Claim}
-                  ]%%
-    \small
 }{
     \end{tcolorbox}
     \end{center}
