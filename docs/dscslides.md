@@ -1,6 +1,6 @@
-# dscslides.sty
+# dscslides.cls
 
-A style file for lecture slides.
+A document class for lecture slides.
 
 ## Basic Use
 

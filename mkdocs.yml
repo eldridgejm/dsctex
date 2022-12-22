@@ -1,3 +1,5 @@
 site_name: DSCTeX
+repo_url: https://github.com/eldridgejm/dsctex
+edit_uri: edit/main/docs/
 theme:
   name: material

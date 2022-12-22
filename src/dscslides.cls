@@ -1,5 +1,8 @@
 % dscslides.cls
 %
+% author: Justin Eldridge
+% email: jeldridge@ucsd.edu
+%
 % A wrapper around Beamer for creating lecture slides in DSC classes @ UCSD.
 
 \NeedsTeXFormat{LaTeX2e}

@@ -17,6 +17,15 @@
               buildInputs = [
                 pkgs.mkdocs
 
+                # latex environment
+                (
+                  pkgs.texlive.combine {
+                    inherit (pkgs.texlive)
+                    scheme-full;
+                  }
+                )
+
+                # python environment
                 (
                   pkgs.python3.withPackages (ps: [
                       ps.mkdocs-material
@@ -24,6 +33,11 @@
                   )
                 )
               ];
+
+              shellHook = ''
+                # add latex sty and cls files to search path
+                export TEXINPUTS=$(pwd)/src:
+              '';
             }
         );
 

@@ -1,0 +1,110 @@
+\documentclass{dscproblemset}
+
+\usepackage[margin=1in]{geometry}
+
+% change to \showsolntrue to show solutions
+\showsolnfalse
+
+% determine the exam's version
+\def\version{Z}
+
+\begin{document}
+
+\examfrontpage{
+    DSC 40B
+}{
+    Midterm 01
+}{
+    December 21, 2022
+}{
+    Instructions: do not cheat.
+}
+
+\nameoneverypage{}
+
+\begin{probset}
+
+    \begin{prob}
+        This is the first problem in the homework.
+
+        \begin{soln}
+            This is the solution.
+        \end{soln}
+
+    \end{prob}
+
+    \begin{prob}
+        This is a problem with several subparts.
+
+        \begin{subprobset}
+            \begin{subprob}
+                Part One.
+            \end{subprob}
+
+            \begin{subprob}
+                Part Two.
+            \end{subprob}
+        \end{subprobset}
+
+    \end{prob}
+
+    \begin{prob}[(Optional descriptions can be provided)]
+        Designated response areas can be drawn.
+
+        \begin{responsebox}{2in}
+            And solutions can be placed inside.
+        \end{responsebox}
+    \end{prob}
+
+    \begin{prob}
+        They can be inline response areas, too:
+
+        First name: \inlineresponsebox[2in]{testing}
+
+        Last name: \inlineresponsebox[2in]{this}
+    \end{prob}
+
+    \newpage
+
+    \begin{prob}
+        Multiple choice questions are supported.
+
+        \begin{choices}
+            \choice alpha
+            \correctchoice beta
+            \choice gamma
+            \choice delta
+        \end{choices}
+
+        The choice bubble's shape can be changed to any valid
+        TiKZ node shape, such as ``rectangle'':
+
+        \begin{choices}[rectangle]
+            \choice alpha
+            \correctchoice beta
+            \choice gamma
+            \choice delta
+        \end{choices}
+    \end{prob}
+
+    \begin{prob}
+        As are True/False questions.
+
+        \Tf{}
+
+    \end{prob}
+
+    % redefine the text that appears before the problem number
+    \renewcommand{\progprobtext}{Coding Problem}
+
+    \begin{progprob}
+        This is a programming problem; it is numbered on a different counter.
+
+        \bubble{test}
+    \end{progprob}
+
+\end{probset}
+
+\scratchpage{}
+
+\end{document}

@@ -1,30 +1,24 @@
-% problemset.sty
-% --------------
-% author: Justin Eldridge
-% email: jeldridge@ucsd.edudsc
+% dscproblemset.cls
 %
-% This package provides commands and environments for creating problem sets
-% along with solutions which can be hidden or shown.
+% author: Justin Eldridge
+% email: jeldridge@ucsd.edu
+%
+% A class for creating problem sets (exams, homeworks, discussion worksheets, etc.).
 
-\RequirePackage{amsmath}
-\RequirePackage{amssymb}
-\RequirePackage{booktabs}
-\RequirePackage{environ}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{dscproblemset}
+
+\LoadClass[twoside]{article}
+
 \RequirePackage{enumitem}
-\RequirePackage{hyperref}
+\RequirePackage{environ}
 \RequirePackage{ifthen}
-\RequirePackage{luacode}
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue,
-}
 \RequirePackage{mdframed}
-\RequirePackage{nicefrac}
-\RequirePackage{parskip}
 \RequirePackage{scrextend}
 \RequirePackage{tikz}
-\RequirePackage{url}
-\RequirePackage{xparse}
+\RequirePackage{fancyhdr}
+
+% solution hiding ======================================================================
 
 % if true, solutions will be shown. Otherwise they will be hidden
 \newif\ifshowsoln
@@ -34,17 +28,16 @@
     \showsolnfalse
 \fi
 
-% sizes and lengths
-% -----------------
+% commands =============================================================================
 
-% separation between problems
-\newcommand{\probsep}{0.5cm}
+% draw a box with text in it
+\newcommand{\remarkbox}[1]{
+    \begin{mdframed}
+        #1
+    \end{mdframed}
+}
 
-% separation between subproblems
-\newcommand{\subprobsep}{.25cm}
-
-% commands
-% --------
+% titles -------------------------------------------------------------------------------
 
 % draw the problem set's title
 \NewDocumentCommand{\pstitle}{ m m o }{
@@ -73,27 +66,136 @@
     \vspace{2em}
 }
 
+% display the exam front page with spots for student name, signature, students
+% sat next to, etc. if the exam is versioned, the version will appear, as will
+% a place to write the exam version of the students seated on the left and
+% right
+\newcommand{\examfrontpage}[4]{
+    \thispagestyle{empty}
 
-% draw a box with text in it
-\newcommand{\remarkbox}[1]{
-    \begin{mdframed}
-        #1
-    \end{mdframed}
+    \pstitle{%
+        #1%
+    }{%
+        #2}[#3]
+
+    \begin{tabular}{rl}
+        Name: & \inlineresponsebox[4in]{SOLUTIONS}\\
+        PID: & \inlineresponsebox[3in]{}\\
+        \ifcsname version\endcsname
+            Exam Version: & \drawinlinebox[.5in]{\version{}}
+        \fi
+    \end{tabular}
+
+    \vspace{1em}
+
+    \setlength{\parindent}{0em}
+    By signing below, you agree that you will behave honestly and fairly during
+    and after this exam. You should not discuss any part of this exam with
+    anyone who has not yet taken it. \vspace{1em}
+
+    Signature: \inlineresponsebox[3in]{}
+
+    \vspace{1em}
+
+    \begin{center}
+        \begin{minipage}{.47\textwidth}
+            \centering
+            Name of student to your \textbf{left}:\\
+            \inlineresponsebox[.95\textwidth]{}\\[1em]
+            \ifcsname version\endcsname
+                Exam version of student to your \textbf{left}:\\
+                \inlineresponsebox[.5in]{}
+            \fi
+        \end{minipage}
+        \begin{minipage}{.47\textwidth}
+            \centering
+            Name of student to your \textbf{right}:\\
+            \inlineresponsebox[.95\textwidth]{}\\[1em]
+            \ifcsname version\endcsname
+                Exam version of student to your \textbf{right}:\\
+                \inlineresponsebox[.5in]{}
+            \fi
+        \end{minipage}
+
+        \vspace{.5em}
+        (Write ``N/A'' if a wall/aisle is to your left/right.)
+    \end{center}
+
+    \vspace{1em}
+
+    \remarkbox{
+        #4
+    }
+
+    \vfill
+
+    \begin{center}
+        (Please do not open your exam until instructed to do so.)
+    \end{center}
+
+    \newpage
 }
 
-\newcommand{\solutiontext}{
-    \textbf{Solution:}
+% scratch pages ------------------------------------------------------------------------
+
+% show a mostly-empty scratch page
+\newcommand{\scratchpage}{
+    \newpage
+    \pagestyle{plain}
+    \begin{center}
+        (You may use this area for scratch work.)
+    \end{center}
+}
+
+% show a mostly-empty scratch page with a message that is OK to detach
+\newcommand{\scratchpagedetach}{
+    \newpage
+    \pagestyle{plain}
+    \begin{center}
+        (You may detach and use this page for scratch work. You do not need to turn it in.)
+    \end{center}
+}
+
+% misc ---------------------------------------------------------------------------------
+
+% command to load problems from particular subdirectory
+\newcommand{\inputproblem}[2][]{
+    {
+        \newcommand{\probdescription}{#1}
+        \newcommand{\thisdir}{./problems/#2/}
+        \input{problems/#2/problem.tex}
+    }
+}
+
+% display a place to write name/pid on every physical page
+\newcommand{\nameoneverypage}{
+    % page headers only on odd pages
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyhead[RO]{PID or Name: \rule{3in}{.5pt}}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+% execute the code only if the version matches
+\newcommand{\onlyversion}[2]{%
+    \ifthenelse{\equal{\version}{#1}}{%
+        #2
+    }{%
+    }%
 }
 
 
-
-% problem environments
-% ------------------------------------------------------------------------------
+% problem environments =================================================================
 
 \newcounter{probnum}
-\newcounter{bonusprobnum}
 \newcounter{progprobnum}
 \newcounter{subprobnum}[probnum]
+
+% separation between problems
+\newcommand{\probsep}{0.5cm}
+
+% separation between subproblems
+\newcommand{\subprobsep}{.25cm}
 
 % create a new problem set environment with proper spacing
 \newenvironment{probset}{
@@ -118,12 +220,15 @@
     \end{list}
 }
 
+% the text that appears before the problem number
+\newcommand{\probtext}{Problem}
+
 % create a new numbered problem
 % the optional argument is meant for point totals, descriptions, etc. If empty,
 % nothing will be printed next to the problem number.
 \newenvironment{prob}[1][]{
     \stepcounter{probnum}
-    \item \textbf{Problem \theprobnum.} #1%
+    \item \textbf{\probtext{} \theprobnum.} #1%
         \ifcsname probdescription\endcsname%
             \probdescription{}
         \fi%
@@ -136,17 +241,21 @@
     \item[\textbf{\alph{subprobnum})}]%
 }{}
 
+% the text that appears before the programming problem number
+\newcommand{\progprobtext}{Programming Problem}
 
 \newenvironment{progprob}[1][]{
     \stepcounter{progprobnum}
     \setcounter{subprobnum}{0}
-    \item \textbf{Programming Problem \theprogprobnum.} #1
+    \item \textbf{\progprobtext{} \theprogprobnum.} #1
 
 }{}
 
+% responses and solutions ==============================================================
 
-% responses and solutions
-% ------------------------------------------------------------------------------
+\newcommand{\solutiontext}{
+    \textbf{Solution:}
+}
 
 % if showsoln is true: draws a box containing solution text
 % if showsoln is false: does nothing
@@ -177,7 +286,6 @@
         \end{mdframed}
 }
 
-
 \newcommand{\drawinlinebox}[2][1.5in]{%
     \tikz[baseline=-.5em]{
         \node[
@@ -204,10 +312,13 @@
     }
 }
 
+% the shape of the bubble in \bubble and \correctbubble
+\newcommand{\bubbleshape}{circle}
+
 % draw a response bubble
 \newcommand{\bubble}[2][]{
     \tikz[baseline=-.25em]{
-        \node[circle, draw, #1] {};
+        \node[\bubbleshape, draw, #1] {};
     }
     #2
     \if\relax\detokenize{#2}\relax
@@ -229,8 +340,6 @@
     \fi
 }
 
-
-
 % define a "choices" environment with each choice on its own line(s), to be used as follows:
 %
 % \begin{choices}
@@ -239,7 +348,9 @@
 %     \correctchoice This is correct.
 %     \choice This is not.
 % \end{choices}
-\NewEnviron{choices}{
+\NewEnviron{choices}[1][circle]{
+    \renewcommand{\bubbleshape}{#1}
+
     \newcommand{\choice}{%
         \item[\bubble{}]
     }
@@ -251,7 +362,6 @@
         \BODY
     \end{itemize}
 }
-
 
 \newcommand{\Tf}{
     \begin{choices}
@@ -265,51 +375,4 @@
         \choice True
         \correctchoice False
     \end{choices}
-}
-
-
-% versions
-% ------------------------------------------------------------------------------
-
-\newcommand{\byversion}[2]{%
-    \ifthenelse{\equal{\version}{A}}{%
-        #1
-    }{%
-        #2
-    }%
-}
-
-
-% configuration
-% ------------------------------------------------------------------------------
-
-% command to load problems from particular subdirectory
-\newcommand{\inputproblem}[2][]{
-    {
-        \newcommand{\probdescription}{#1}
-        \newcommand{\thisdir}{./problems/#2/}
-        \input{problems/#2/problem.tex}
-    }
-}
-
-
-% convenience functions
-% ------------------------------------------------------------------------------
-
-\begin{luacode}
-
-    function scanproblems()
-        local f = io.popen('cd problems && fd . --max-depth 1')
-        for line in f:lines() do
-            print(line)
-            local cmd = "\\inputproblem{" .. line .. "}"
-            tex.print(cmd)
-        end
-    end
-
-\end{luacode}
-
-% automatically find and include problems from problem directory
-\newcommand{\scanproblems}{
-    \luadirect{scanproblems()}
 }

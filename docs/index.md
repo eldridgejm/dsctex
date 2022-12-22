@@ -10,10 +10,13 @@ to the same directory containing your LaTeX document.
 A more permanent installation involves saving these files somewhere and adding
 that directory to the `$TEXINPUTS` environment variable.
 
-## Files
+## Classes
 
 There are three files in this distribution:
 
-- [`dscslides.sty`](dscslides.md): a style file for the creation of lecture slides
-- [`dscproblemset.cls`](dscproblemset.cls): a class for creating sets of problems (and solutions)
-- [`dscexam.cls`](dscexam.cls): a class for creating exams
+- [`dscslides.cls`](dscslides.md): a document class for the creation of lecture slides
+- [`dscproblemset.cls`](dscproblemset.md): for creating sets of problems (and solutions)
+
+## Packages
+
+- [`dscmath.sty`](dscmath.md): symbols and helpers for writing math

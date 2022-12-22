@@ -1,0 +1,23 @@
+% dscmath.sty
+%
+% author: Justin Eldridge
+% email: jeldridge@ucsd.edu
+%
+% Commonly-used notations and mathematical helper commands.
+
+\RequirePackage{amsmath}
+
+% a scalar in a set of scalars
+\newcommand{\nsca}[2]{{#1}^{(#2)}}
+
+% a vector in a set of vectors
+\newcommand{\nvec}[2]{\vec\nsca{#1}{#2}}
+
+% a basis vector in a set of basis vectors
+\newcommand{\bvec}[2]{\hat\nsca{#1}{#2}}
+
+% convenience macro for the standard basis vectors
+\newcommand{\be}[1]{\hat{e}^{(#1)}}
+
+% convenience macro for alternative basis vectors
+\newcommand{\bu}[1]{\hat{u}^{(#1)}}
