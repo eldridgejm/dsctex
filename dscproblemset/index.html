@@ -1,0 +1,1133 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>dscproblemset.cls - DSCTeX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dscproblemsetcls" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DSCTeX" class="md-header__button md-logo" aria-label="DSCTeX" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DSCTeX
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              dscproblemset.cls
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eldridgejm/dsctex" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DSCTeX" class="md-nav__button md-logo" aria-label="DSCTeX" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DSCTeX
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eldridgejm/dsctex" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to the DSCTeX Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dscmath/" class="md-nav__link">
+        dscmath.sty
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          dscproblemset.cls
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        dscproblemset.cls
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    Basic Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homeworks-vs-exams" class="md-nav__link">
+    Homeworks vs. Exams
+  </a>
+  
+    <nav class="md-nav" aria-label="Homeworks vs. Exams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#homeworks" class="md-nav__link">
+    Homeworks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exams" class="md-nav__link">
+    Exams
+  </a>
+  
+    <nav class="md-nav" aria-label="Exams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting-a-front-page" class="md-nav__link">
+    Formatting a Front Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-areas" class="md-nav__link">
+    Name Areas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scratch-pages" class="md-nav__link">
+    Scratch Pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-environments" class="md-nav__link">
+    Problem Environments
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    Problems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subproblems" class="md-nav__link">
+    Subproblems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    Solutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#designated-response-areas" class="md-nav__link">
+    Designated Response Areas
+  </a>
+  
+    <nav class="md-nav" aria-label="Designated Response Areas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-boxes" class="md-nav__link">
+    Response Boxes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-response-boxes" class="md-nav__link">
+    Inline Response Boxes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-choices" class="md-nav__link">
+    Multiple Choices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truefalse" class="md-nav__link">
+    True/False
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-commands" class="md-nav__link">
+    Other Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputproblem" class="md-nav__link">
+    \inputproblem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-time-solution-hiding" class="md-nav__link">
+    Compile-time Solution Hiding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dscslides/" class="md-nav__link">
+        dscslides.cls
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    Basic Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homeworks-vs-exams" class="md-nav__link">
+    Homeworks vs. Exams
+  </a>
+  
+    <nav class="md-nav" aria-label="Homeworks vs. Exams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#homeworks" class="md-nav__link">
+    Homeworks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exams" class="md-nav__link">
+    Exams
+  </a>
+  
+    <nav class="md-nav" aria-label="Exams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting-a-front-page" class="md-nav__link">
+    Formatting a Front Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-areas" class="md-nav__link">
+    Name Areas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scratch-pages" class="md-nav__link">
+    Scratch Pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-environments" class="md-nav__link">
+    Problem Environments
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    Problems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subproblems" class="md-nav__link">
+    Subproblems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    Solutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#designated-response-areas" class="md-nav__link">
+    Designated Response Areas
+  </a>
+  
+    <nav class="md-nav" aria-label="Designated Response Areas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-boxes" class="md-nav__link">
+    Response Boxes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-response-boxes" class="md-nav__link">
+    Inline Response Boxes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-choices" class="md-nav__link">
+    Multiple Choices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truefalse" class="md-nav__link">
+    True/False
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-commands" class="md-nav__link">
+    Other Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputproblem" class="md-nav__link">
+    \inputproblem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-time-solution-hiding" class="md-nav__link">
+    Compile-time Solution Hiding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/eldridgejm/dsctex/edit/main/docs/dscproblemset.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="dscproblemsetcls">dscproblemset.cls</h1>
+<p>A document class for creating problem sets (exams, homeworks, worksheets,
+etc.). Defines commands and environments for writing problems, solutions (which
+can be hidden or shown at the flip of a switch), and designated answer areas,
+such as multiple choices and response boxes.</p>
+<h2 id="basic-usage">Basic Usage</h2>
+<p>To use the class, write <code>\documentclass{dscproblemset}</code> at the top of your
+document.</p>
+<p>Within the document, write each problem within a <code>prob</code> environment, themselves
+nested within a <code>probset</code> environment. Solutions to problems should be placed
+in <code>soln</code> environments.</p>
+<p>A minimal example:</p>
+<pre><code>\documentclass{dscproblemset}
+
+\begin{document}
+
+\begin{probset}
+    \begin{prob}
+        This is the first problem.
+
+        \begin{soln}
+            This is its solution.
+        \end{soln}
+    \end{prob}
+
+    \begin{prob}
+        This is the second problem.
+
+        \begin{soln}
+            This is its solution.
+        \end{soln}
+    \end{prob}
+\end{probset}
+
+\end{document}
+</code></pre>
+<h2 id="homeworks-vs-exams">Homeworks vs. Exams</h2>
+<p>Homeworks and exams are both "problem sets", and this document class can be
+used to create either.</p>
+<h3 id="homeworks">Homeworks</h3>
+<p>Not much special needs to be done for homeworks. Perhaps the main difference
+between a homework and an exam is on the formatting of the title and
+instructions. For a homework, a minimal title is preferable; this can be
+created with <code>\pstitle</code>:</p>
+<p>Signature: <code>\pstitle{&lt;course name&gt;}{&lt;assignment name&gt;}[&lt;due date&gt;]</code></p>
+<h3 id="exams">Exams</h3>
+<p>The class provides functionality that is especially useful for exam writing,
+including the ability to have multiple versions, formatting a title page, and
+adding empty scratch pages.</p>
+<p>Exams are also more likely to use designated response areas; these are described
+in the <a href="#designated-response-areas">Designated Response Areas</a> section below.</p>
+<h4 id="versioning">Versioning</h4>
+<p>The document class looks for the <code>\version</code> macro to determine the exam's
+version. To set the exam version, write, e.g., <code>\def\version{A}</code> at the top of
+the document, or during compilation with the <code>-usepretex</code> command line argument
+to you LaTeX compiler.</p>
+<p>The <code>\onlyversion</code> command can be used to execute code if and only if the
+version matches.</p>
+<pre><code>\onlyversion{C}{
+    % only displays if the exam version is &quot;C&quot;
+    Hello world!
+}
+</code></pre>
+<h4 id="formatting-a-front-page">Formatting a Front Page</h4>
+<p>Use <code>\examfrontpage</code> to generate an exam front page. The full signature is:</p>
+<pre><code>\examfrontpage{&lt;course name&gt;}{&lt;exam name&gt;}{&lt;date&gt;}{&lt;instructions&gt;}
+</code></pre>
+<p>This will make areas for student name, signature, students sat next to, etc. if
+the exam is versioned, the version will appear, as will a place to write the
+exam version of the students seated on the left and right</p>
+<h4 id="name-areas">Name Areas</h4>
+<p><code>\nameoneverypage{}</code> can be used to display an area where students can write
+their name on every page.</p>
+<h4 id="scratch-pages">Scratch Pages</h4>
+<p><code>\scratchpage{}</code> will generate an empty page (except for an instruction that says that
+the page is intentionally empty).</p>
+<p><code>\scratchpagedetach{}</code> also generates an empty page for scratch work, but its message
+says that the page is OK to remove from the exam.</p>
+<h2 id="problem-environments">Problem Environments</h2>
+<h3 id="problems">Problems</h3>
+<p>Groups of problems should be defined within a <code>probset</code> environment.
+Individual problems are defined within <code>prob</code> environments within the <code>probset</code>.
+For example:</p>
+<pre><code>\begin{probset}
+    \begin{prob}
+        This is the first problem.
+    \end{prob}
+
+    \begin{prob}
+        This is the second.
+    \end{prob}
+\end{probset}
+</code></pre>
+<p>Problems are numbered automatically. An optional description can be provided:</p>
+<pre><code>\begin{prob}[(Extra credit!)]
+    ...
+\end{prob}
+</code></pre>
+<p>Programming problems can be defined with the <code>progprob</code> environment.
+Programming problems are numbered on a different counter than normal problems.</p>
+<h3 id="subproblems">Subproblems</h3>
+<p>Multiple subproblems can be definined within a <code>subprobset</code> environment (itself
+placed within a <code>prob</code> environment. The individual subproblems should be placed
+within <code>subprob</code> environments. For example:</p>
+<pre><code>\begin{prob}
+    This is a problem with several subparts.
+
+    \begin{subprobset}
+        \begin{subprob}
+            Part One.
+        \end{subprob}
+
+        \begin{subprob}
+            Part Two.
+        \end{subprob}
+    \end{subprobset}
+
+\end{prob}
+</code></pre>
+<h2 id="solutions">Solutions</h2>
+<p>Solutions to a problem should be placed with a <code>soln</code> environment (itself
+placed within a <code>prob</code> or <code>subprob</code>. Its contents can be hidden or shown by
+writing either <code>\showsolntrue</code> or <code>\showsolnfalse</code> after
+<code>\usepackage{dscproblemset}</code>.</p>
+<p>Example:</p>
+<pre><code>\documentclass{article}
+\usepackage{dscproblemset}
+
+% solutions will be hidden unless this is changed to \showsolntrue
+\showsolnfalse
+
+\begin{document}
+    \begin{probset}
+        \begin{prob}
+            \begin{soln}
+                This is the secret answer.
+            \end{soln}
+        \end{prob}
+    \end{probset}
+\end{document}
+</code></pre>
+<h2 id="designated-response-areas">Designated Response Areas</h2>
+<p>This package also provides tools for drawing designated response areas, such as
+those on a quiz or exam that will be scanned and graded.</p>
+<h3 id="response-boxes">Response Boxes</h3>
+<p>A blank response box can be drawn using the <code>responsebox</code> environment. The
+single argument to this environment is a size determining the height of the
+box. The contents of the environment are hidden when <code>\ifshowsoln</code> is false,
+and are shown otherwise.</p>
+<p>Example:</p>
+<pre><code>\begin{prob}
+    What is the meaning of life?
+
+    \begin{responsebox}{3in}
+        This is the solution.
+    \end{responsebox}
+\end{prob}
+</code></pre>
+<h3 id="inline-response-boxes">Inline Response Boxes</h3>
+<p>Inline response boxes for short answer questions can be drawn with <code>\inlineresponsebox</code>.
+The signature is:</p>
+<p><code>\inlineresponsebox[&lt;width&gt;]{&lt;solution&gt;}</code></p>
+<p>Example:</p>
+<pre><code>\begin{prob}
+    What is 3 + 5? \inlineresponsebox[1in]{8}
+\end{prob}
+</code></pre>
+<h3 id="multiple-choices">Multiple Choices</h3>
+<p>Multiple choice bubbles can be drawn with the <code>choices</code> environment:</p>
+<pre><code>\begin{prob}
+    What is the capital of California?
+
+    \begin{choices}
+        \choice Los Angeles
+        \choice San Francisco
+        \correctchoice Sacramento
+        \choice San Diego
+    \end{choices}
+\end{prob}
+</code></pre>
+<p>The correct bubble is shaded when <code>\ifshownsoln</code> is true, and is unmarked otherwise.</p>
+<p>The shape of the choice bubble can be altered with an optional argument to the <code>choices</code> environment. The shape can be any valid TiKZ node shape:</p>
+<pre><code>Choose all that apply:
+
+\begin{choices}[rectangle]
+    \choice alpha
+    \correctchoice beta
+    \choice gamma
+    \choice delta
+\end{choices}
+</code></pre>
+<p>If desired, individual bubbles can be drawn outside of a <code>choices</code> environment using the
+<code>\bubble{&lt;text&gt;}</code> and <code>\correctbubble{&lt;text&gt;}</code> commands.</p>
+<h3 id="truefalse">True/False</h3>
+<p>True/False response areas can be drawn with <code>\Tf</code> (if True is the correct
+response) and <code>\tF</code> (if False is the correct response). Like with <code>choices</code>,
+the correct choice is shaded if solutions are being shown.</p>
+<h2 id="other-commands">Other Commands</h2>
+<h3 id="inputproblem"><code>\inputproblem</code></h3>
+<p>A helper function for including a problem located in a subdirectory. Assumes
+that the problem is containing in a file names <code>problem.tex</code> within a directory
+named after the problem, itself within a directory called <code>problems</code>.</p>
+<p>Signature: <code>\inputproblem[&lt;description&gt;]{&lt;problem name&gt;}</code></p>
+<p>Example: to include the problem defined in
+<code>problems/time-complexity/problem.tex</code>, write <code>\inputproblem{time-complexity}</code>.</p>
+<h2 id="compile-time-solution-hiding">Compile-time Solution Hiding</h2>
+<p>As described above, showing or hiding the solutions can be done by setting
+<code>\showsolntrue</code> or <code>\showsolnfalse</code> after <code>\usepackage{dscproblemset}</code>.
+However, there are some cases in which we'd like to show or hide solutions at
+compile time (e.g., in a <code>Makefile</code> that builds both the version with solutions
+and that without).</p>
+<p>To facilitate this, this package looks for a macro named <code>\hidesoln</code>. If this
+name exists, <code>\showsolnfalse</code> is set. Otherwise, <code>\showsolntrue</code> is set by
+default.</p>
+<p>This mechanism facilitates compile-time automation because macros can be
+defined at the command line with most LaTeX compilers using the <code>-usepretex</code>
+argument. For example:</p>
+<pre><code>pdflatex -usepretex=`\def\hidesoln{1}`
+</code></pre>
+<h2 id="configuration">Configuration</h2>
+<p>The spacing between problems and subproblems can be changed by redefining the commands
+<code>\probsep</code> and <code>\subprobsep</code>. Their default definitions are:</p>
+<pre><code>% separation between problems
+\newcommand{\probsep}{0.5cm}
+
+% separation between subproblems
+\newcommand{\subprobsep}{.25cm}
+</code></pre>
+<p>By default, programming problems are labeled, e.g., "Problem 1.", and
+programming problems are labeled "Programming Problem 1.". The text that
+appears before the number can be controlled by redefining <code>\probtext</code> and
+<code>\progprobtext</code>.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-tex">\documentclass{dscproblemset}
+
+\usepackage[margin=1in]{geometry}
+
+% change to \showsolntrue to show solutions
+\showsolnfalse
+
+% determine the exam's version
+\def\version{Z}
+
+\begin{document}
+
+\examfrontpage{
+    DSC 40B
+}{
+    Midterm 01
+}{
+    December 21, 2022
+}{
+    Instructions: do not cheat.
+}
+
+\nameoneverypage{}
+
+\begin{probset}
+
+    \begin{prob}
+        This is the first problem in the homework.
+
+        \begin{soln}
+            This is the solution.
+        \end{soln}
+
+    \end{prob}
+
+    \begin{prob}
+        This is a problem with several subparts.
+
+        \begin{subprobset}
+            \begin{subprob}
+                Part One.
+            \end{subprob}
+
+            \begin{subprob}
+                Part Two.
+            \end{subprob}
+        \end{subprobset}
+
+    \end{prob}
+
+    \begin{prob}[(Optional descriptions can be provided)]
+        Designated response areas can be drawn.
+
+        \begin{responsebox}{2in}
+            And solutions can be placed inside.
+        \end{responsebox}
+    \end{prob}
+
+    \begin{prob}
+        They can be inline response areas, too:
+
+        First name: \inlineresponsebox[2in]{testing}
+
+        Last name: \inlineresponsebox[2in]{this}
+    \end{prob}
+
+    \newpage
+
+    \begin{prob}
+        Multiple choice questions are supported.
+
+        \begin{choices}
+            \choice alpha
+            \correctchoice beta
+            \choice gamma
+            \choice delta
+        \end{choices}
+
+        The choice bubble's shape can be changed to any valid
+        TiKZ node shape, such as ``rectangle'':
+
+        \begin{choices}[rectangle]
+            \choice alpha
+            \correctchoice beta
+            \choice gamma
+            \choice delta
+        \end{choices}
+    \end{prob}
+
+    \begin{prob}
+        As are True/False questions.
+
+        \Tf{}
+
+    \end{prob}
+
+    % redefine the text that appears before the problem number
+    \renewcommand{\progprobtext}{Coding Problem}
+
+    \begin{progprob}
+        This is a programming problem; it is numbered on a different counter.
+
+        \bubble{test}
+    \end{progprob}
+
+\end{probset}
+
+\scratchpage{}
+
+\end{document}
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../dscmath/" class="md-footer__link md-footer__link--prev" aria-label="Previous: dscmath.sty" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              dscmath.sty
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../dscslides/" class="md-footer__link md-footer__link--next" aria-label="Next: dscslides.cls" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              dscslides.cls
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
