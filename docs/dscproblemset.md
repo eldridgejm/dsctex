@@ -16,7 +16,7 @@ in `soln` environments.
 
 A minimal example:
 
-```
+```tex
 \documentclass{dscproblemset}
 
 \begin{document}
@@ -75,7 +75,7 @@ to you LaTeX compiler.
 The `\onlyversion` command can be used to execute code if and only if the
 version matches.
 
-```
+```tex
 \onlyversion{C}{
     % only displays if the exam version is "C"
     Hello world!
@@ -86,7 +86,7 @@ version matches.
 
 Use `\examfrontpage` to generate an exam front page. The full signature is:
 
-```
+```tex
 \examfrontpage{<course name>}{<exam name>}{<date>}{<instructions>}
 ```
 
@@ -115,7 +115,7 @@ Groups of problems should be defined within a `probset` environment.
 Individual problems are defined within `prob` environments within the `probset`.
 For example:
 
-```
+```tex
 \begin{probset}
     \begin{prob}
         This is the first problem.
@@ -129,7 +129,7 @@ For example:
 
 Problems are numbered automatically. An optional description can be provided:
 
-```
+```tex
 \begin{prob}[(Extra credit!)]
     ...
 \end{prob}
@@ -144,7 +144,7 @@ Multiple subproblems can be definined within a `subprobset` environment (itself
 placed within a `prob` environment. The individual subproblems should be placed
 within `subprob` environments. For example:
 
-```
+```tex
 \begin{prob}
     This is a problem with several subparts.
 
@@ -170,7 +170,7 @@ writing either `\showsolntrue` or `\showsolnfalse` after
 
 Example:
 
-```
+```tex
 \documentclass{article}
 \usepackage{dscproblemset}
 
@@ -201,7 +201,7 @@ box. The contents of the environment are hidden when `\ifshowsoln` is false,
 and are shown otherwise.
 
 Example:
-```
+```tex
 \begin{prob}
     What is the meaning of life?
 
@@ -219,7 +219,7 @@ The signature is:
 `\inlineresponsebox[<width>]{<solution>}`
 
 Example:
-```
+```tex
 \begin{prob}
     What is 3 + 5? \inlineresponsebox[1in]{8}
 \end{prob}
@@ -229,7 +229,7 @@ Example:
 
 Multiple choice bubbles can be drawn with the `choices` environment:
 
-```
+```tex
 \begin{prob}
     What is the capital of California?
 
@@ -246,7 +246,7 @@ The correct bubble is shaded when `\ifshownsoln` is true, and is unmarked otherw
 
 The shape of the choice bubble can be altered with an optional argument to the `choices` environment. The shape can be any valid TiKZ node shape:
 
-```
+```tex
 Choose all that apply:
 
 \begin{choices}[rectangle]
@@ -305,7 +305,7 @@ pdflatex -usepretex=`\def\hidesoln{1}`
 The spacing between problems and subproblems can be changed by redefining the commands
 `\probsep` and `\subprobsep`. Their default definitions are:
 
-```
+```tex
 % separation between problems
 \newcommand{\probsep}{0.5cm}
 

@@ -4,8 +4,9 @@ This package contains LaTeX `.sty` and `.cls` files used in DSC courses at UCSD.
 
 ## Installation
 
-The easiest installation involves copying the files under the `src/` directory
-to the same directory containing your LaTeX document.
+The easiest installation involves cloning the [GitHub
+repository](https://github.com/eldridgejm/dsctex) and copying the files under
+the `src/` directory to the same directory containing your LaTeX document.
 
 A more permanent installation involves saving these files somewhere and adding
 that directory to the `$TEXINPUTS` environment variable.

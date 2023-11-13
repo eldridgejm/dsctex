@@ -130,7 +130,7 @@ environment contents within.
 
 Example:
 
-```
+```tex
 \begin{exercise}
     What is 3 + 5?
 \end{exercise}

@@ -1,4 +1,4 @@
-build/
+build
 .direnv
 
 ## Core latex/pdflatex auxiliary files:
