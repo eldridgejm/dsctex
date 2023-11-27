@@ -188,6 +188,15 @@ Example:
 \end{document}
 ```
 
+You can do things conditioned on whether or not solutions are shown using `\ifshowsoln`.
+For example, to force a new page, but only in the solution document, write:
+
+```tex
+\ifshownsoln
+    \newpage
+\fi
+```
+
 ## Designated Response Areas
 
 This package also provides tools for drawing designated response areas, such as
