@@ -67,20 +67,55 @@ in the [Designated Response Areas](#designated-response-areas) section below.
 
 #### Versioning
 
-The document class looks for the `\version` macro to determine the exam's
-version. To set the exam version, write, e.g., `\def\version{A}` at the top of
-the document, or during compilation with the `-usepretex` command line argument
-to you LaTeX compiler.
+It can be useful to have different, but similar versions of an exam. For
+example, you might want students who sit next to one another to have different
+exam versions with slightly different problems (or problems in a different
+order).
 
-The `\onlyversion` command can be used to execute code if and only if the
-version matches.
+To help with exam versioning, this class provides a `\onlyversion` command that
+can be used to conditionally execute code based on the exam version. For
+example:
 
 ```tex
-\onlyversion{C}{
-    % only displays if the exam version is "C"
+\onlyversion{A}{
+    % only displays if the exam version is "A"
     Hello world!
 }
 ```
+
+To set the exam's version, write `\def\version{<version>}` at the top of the
+document. For example, the following code produces "This is Version A":
+
+```tex
+
+\def\version{A}
+
+\onlyversion{A}{
+    This is Version A
+}
+
+\onlyversion{B}{
+    This is Version B
+}
+```
+
+On the other hand, changing the first line to `\def\version{B}` would produce
+"This is Version B".
+
+You can create as many exam versions as you like (or just one).
+
+An alternative way to specify the exam is to specify the value of `\version`
+during compilation. This will depend on the LaTeX compiler you are using, but
+many support the `-usepretex` command line argument. This argument can be used
+to define a macro at compile time. For example, to compile the document with
+`\version` set to "A", you might write:
+
+```
+pdflatex -usepretex=`\def\version{A}` myexam.tex
+```
+
+If this is done, the `\def\version{<version>}` line at the top of the document
+should be removed, as it will override the value set at compile time.
 
 #### Formatting a Front Page
 
@@ -93,6 +128,9 @@ Use `\examfrontpage` to generate an exam front page. The full signature is:
 This will make areas for student name, signature, students sat next to, etc. if
 the exam is versioned, the version will appear, as will a place to write the
 exam version of the students seated on the left and right
+
+If the `\version` macro is not defined, the exam version will not appear on the
+front page.
 
 #### Name Areas
 
