@@ -66,6 +66,35 @@
     \vspace{2em}
 }
 
+% Draws signature boxes for the students to the left and right of the exam taker
+% if the exam is versioned, a space to right the version will also appear.
+% This can be overridden by redefining the \adjacentstudents command
+\newcommand{\adjacentstudents}{
+    \begin{center}
+        \begin{minipage}{.47\textwidth}
+            \centering
+            Name of student to your \textbf{left}:\\
+            \inlineresponsebox[.95\textwidth]{}\\[1em]
+            \ifcsname version\endcsname
+                Exam version of student to your \textbf{left}:\\
+                \inlineresponsebox[.5in]{}
+            \fi
+        \end{minipage}
+        \begin{minipage}{.47\textwidth}
+            \centering
+            Name of student to your \textbf{right}:\\
+            \inlineresponsebox[.95\textwidth]{}\\[1em]
+            \ifcsname version\endcsname
+                Exam version of student to your \textbf{right}:\\
+                \inlineresponsebox[.5in]{}
+            \fi
+        \end{minipage}
+
+        \vspace{.5em}
+        (Write ``N/A'' if a wall/aisle is to your left/right.)
+    \end{center}
+}
+
 % display the exam front page with spots for student name, signature, students
 % sat next to, etc. if the exam is versioned, the version will appear, as will
 % a place to write the exam version of the students seated on the left and
@@ -97,29 +126,7 @@
 
     \vspace{1em}
 
-    \begin{center}
-        \begin{minipage}{.47\textwidth}
-            \centering
-            Name of student to your \textbf{left}:\\
-            \inlineresponsebox[.95\textwidth]{}\\[1em]
-            \ifcsname version\endcsname
-                Exam version of student to your \textbf{left}:\\
-                \inlineresponsebox[.5in]{}
-            \fi
-        \end{minipage}
-        \begin{minipage}{.47\textwidth}
-            \centering
-            Name of student to your \textbf{right}:\\
-            \inlineresponsebox[.95\textwidth]{}\\[1em]
-            \ifcsname version\endcsname
-                Exam version of student to your \textbf{right}:\\
-                \inlineresponsebox[.5in]{}
-            \fi
-        \end{minipage}
-
-        \vspace{.5em}
-        (Write ``N/A'' if a wall/aisle is to your left/right.)
-    \end{center}
+    \adjacentstudents{}
 
     \vspace{1em}
 

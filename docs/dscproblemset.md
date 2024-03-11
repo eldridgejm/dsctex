@@ -125,12 +125,23 @@ Use `\examfrontpage` to generate an exam front page. The full signature is:
 \examfrontpage{<course name>}{<exam name>}{<date>}{<instructions>}
 ```
 
-This will make areas for student name, signature, students sat next to, etc. if
-the exam is versioned, the version will appear, as will a place to write the
-exam version of the students seated on the left and right
+This will make areas for student name, the exam taker's signature, the
+signature of the test takers adjacent to the student, etc. If the exam is
+versioned, the version will appear, as will a place to write the exam version
+of the students seated on the left and right.
 
 If the `\version` macro is not defined, the exam version will not appear on the
 front page.
+
+By default, there are boxes for the adjacent students to place their printed
+name and signature. You may change this section of the front page by redefining
+the `\adjacentstudents` command. In particular, if you want to remove it altogether, you can write:
+
+```tex
+\renewcommand{\adjacentstudents}{}
+```
+
+This should be placed before the call to `\examfrontpage`.
 
 #### Name Areas
 
