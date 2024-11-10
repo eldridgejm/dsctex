@@ -57,11 +57,16 @@
     \end{prob}
 
     \begin{prob}
-        They can be inline response areas, too:
+        There can be inline response areas, too:
 
-        First name: \inlineresponsebox[2in]{testing}
+        \setlength{\inlineresponseboxwidth}{5in}
 
-        Last name: \inlineresponsebox[2in]{this}
+        First name: \inlineresponsebox{testing}
+
+        Middle name: \inlineresponsebox[2in]{middle}
+
+        Last name: \inlineresponsebox[2in][1in]{this}
+
     \end{prob}
 
     \newpage

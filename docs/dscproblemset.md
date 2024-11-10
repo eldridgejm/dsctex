@@ -274,13 +274,23 @@ Example:
 Inline response boxes for short answer questions can be drawn with `\inlineresponsebox`.
 The signature is:
 
-`\inlineresponsebox[<width>]{<solution>}`
+`\inlineresponsebox[<width>][<height>]{<solution>}`
+
+The default width is 1.5 inches, and the default height is 3.25 em.
 
 Example:
 ```tex
 \begin{prob}
     What is 3 + 5? \inlineresponsebox[1in]{8}
 \end{prob}
+```
+
+The default widths and heights can be overridden by changing the values of
+`\inlineresponseboxwidth` and `\inlineresponseboxheight`:
+
+```tex
+\setlength{\inlineresponseboxwidth}{1in}
+\setlength{\inlineresponseboxheight}{1in}
 ```
 
 ### Multiple Choices

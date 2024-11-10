@@ -40,6 +40,10 @@
 % titles -------------------------------------------------------------------------------
 
 % draw the problem set's title
+% Arguments:
+%   #1: the course name
+%   #2: the problem set name
+%   #3: the date
 \NewDocumentCommand{\pstitle}{ m m o }{
     \begin{center}
         \begin{tikzpicture}
@@ -111,7 +115,7 @@
         Name: & \inlineresponsebox[4in]{SOLUTIONS}\\
         PID: & \inlineresponsebox[3in]{}\\
         \ifcsname version\endcsname
-            Exam Version: & \drawinlinebox[.5in]{\version{}}
+        Exam Version: & \drawinlinebox{.5in}{.5in}{\version{}}
         \fi
     \end{tabular}
 
@@ -293,13 +297,19 @@
         \end{mdframed}
 }
 
-\newcommand{\drawinlinebox}[2][1.5in]{%
+% draws an inline box. Lower level than \inlineresponsebox, which should typically
+% be used instead.
+% Arguments:
+%   #1: width of the box
+%   #2: height of the box
+%   #3: text to include in the box
+\newcommand{\drawinlinebox}[3]{
     \tikz[baseline=-.5em]{
         \node[
-            draw, rectangle, inner sep=0, text centered, minimum height=3em,
+            draw, rectangle, inner sep=0, text centered, minimum height=#2,
             text width=#1, align=center
         ] at (0,0) {
-            #2
+            #3
         };
         \useasboundingbox
             ([shift={(1mm,1mm)}]current bounding box.north east)
@@ -308,13 +318,25 @@
     }%
 }
 
+% controls the width of the inline response box
+\newlength{\inlineresponseboxwidth}
+\setlength{\inlineresponseboxwidth}{1.5in}
+
+% controls the height of the inline response box
+\newlength{\inlineresponseboxheight}
+\setlength{\inlineresponseboxheight}{3.25em}
+
 % Draw an inline response box.
 % if showsoln is true: draws the box and the included text
 % if showsoln is false: draws the box only
-\newcommand{\inlineresponsebox}[2][1.5in]{%
-    \drawinlinebox[#1]{
+% Arguments:
+%   #1: width of the box (optional, default 1.5in)
+%   #2: height of the box (optional, default 3.25em)
+%   #3: text to include in the box
+\NewDocumentCommand{\inlineresponsebox}{ O{\inlineresponseboxwidth} O{\inlineresponseboxheight} m }{
+    \drawinlinebox{#1}{#2}{
         \ifshowsoln
-            #2
+            #3
         \fi
     }
 }
