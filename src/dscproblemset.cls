@@ -113,7 +113,7 @@
 
     \begin{tabular}{rl}
         Name: & \inlineresponsebox[4in]{SOLUTIONS}\\
-        PID: & \inlineresponsebox[3in]{}\\
+        TSN: & \inlineresponsebox[3in]{}\\
         \ifcsname version\endcsname
         Exam Version: & \drawinlinebox{.5in}{.5in}{\version{}}
         \fi
@@ -178,12 +178,12 @@
     }
 }
 
-% display a place to write name/pid on every physical page
+% display a place to write name/tsn on every physical page
 \newcommand{\nameoneverypage}{
     % page headers only on odd pages
     \pagestyle{fancy}
     \fancyhead{}
-    \fancyhead[RO]{PID or Name: \rule{3in}{.5pt}}
+    \fancyhead[RO]{TSN or Name: \rule{3in}{.5pt}}
     \renewcommand{\headrulewidth}{0pt}
 }
 
